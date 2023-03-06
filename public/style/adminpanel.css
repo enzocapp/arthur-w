@@ -82,7 +82,8 @@ body {
 
 #edit {
   background-color: rgb(42, 118, 132);
-  padding: 5px;
+  padding: 7px 10px;
+  width: fit-content;
 }
 
 #edit:hover {
@@ -91,6 +92,8 @@ body {
 
 #delete {
   background-color: rgb(214, 48, 48);
+  padding: 7px 10px;
+  width: fit-content;
 }
 
 #delete:hover {
