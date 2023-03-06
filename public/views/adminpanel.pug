@@ -67,12 +67,13 @@ head
                 h3=`Tamaño: ${cli.size}`
                 h3=`Cantidad: ${cli.amount}`
                 h3=`Color: ${cli.color}`
-              a#edit.action-btn(href=`/admin/panel/${client._id}/done`) Pedido Entregado
+            a#edit.action-btn(href=`/admin/panel/${client._id}/done`) Pedido Entregado
         else
             
       
   .h1-orders
       h1.orders-h1 Pedidos Hechos
+  .products-max-container
       each client in y
         if client.done == true
           .products

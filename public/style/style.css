@@ -190,6 +190,12 @@ nav img {
   font-size: 20px !important;
   color: #1a4;
 }
+
+.amount-ok:hover {
+  cursor: pointer;
+  color: rgb(18, 102, 46);
+}
+
 .select-size {
   max-width: 42.5px;
   margin: 0px !important;
@@ -201,6 +207,10 @@ nav img {
   display: none;
   font-size: 20px !important;
   color: #1a4;
+}
+.size-ok:hover{
+  cursor: pointer;
+  color: rgb(18, 102, 46);
 }
 /* Carousel ---------- */
 .aJ1 {
