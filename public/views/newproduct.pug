@@ -15,9 +15,19 @@ head
     .form 
         form(action="/admin/panel/new" method="POST")
             .imagen.section
+                .separator
+                    h1.titulo-h1 Editar Producto
                 .separator 
-                    h2 Imagen
-                    input.new-input(type="file" name="pImage")
+                    h2 Seleccionar imagen
+                    span(class="material-symbols-outlined expand-imgs") expand_more
+                    input.send-img-path(type="text" name="pImage" hidden value)
+                    .image-container 
+                        each x in y 
+                            .select-img-container
+                                img#img-chk(src=``)
+                                input.checkbox-img(type="checkbox")
+                    h4#h4-margintop O 
+                        a.upload-link(href="/admin/upload") añadir una nueva imagen
                 .separator 
                     h2 Precio (Incluir "$")
                     input.new-input(type="text" name="pPrice")

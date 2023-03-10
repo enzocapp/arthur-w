@@ -9,7 +9,8 @@ controller.compra = (req, res) => {
 };
 
 const Product = require("../model/Product");
-const Clients = require("../model/client");
+const Clients = require("../model/Client");
+const Image = require("../model/Image");
 const cookie = require("cookie");
 
 controller.createUser = async (req, res, next) => {
@@ -23,8 +24,9 @@ controller.createUser = async (req, res, next) => {
   }
 };
 
-controller.newProduct = (req, res) => {
-  res.render("newproduct");
+controller.newProduct = async (req, res) => {
+  const upload = await Image.find().lean();
+  res.render("newproduct", { y: upload });
 };
 
 controller.addProduct = async (req, res) => {
@@ -38,8 +40,8 @@ controller.addProduct = async (req, res) => {
 };
 controller.loginPanel = (req, res) => {
   const cookies = req.cookies;
-  if (cookies.isLogged == "y")res.redirect("/admin/panel");
-  else{
+  if (cookies.isLogged == "y") res.redirect("/admin/panel");
+  else {
     res.render("adminlogin");
   }
 };
@@ -74,8 +76,9 @@ controller.adminPanel = async (req, res) => {
 
 controller.renderEdit = async (req, res) => {
   try {
+    const upload = await Image.find().lean();
     const prod = await Product.findById(req.params.id);
-    res.render("edit", { x: prod });
+    res.render("edit", { x: prod, y: upload });
   } catch (error) {
     console.log(error.message);
   }
@@ -88,14 +91,14 @@ controller.editProduct = async (req, res) => {
 };
 
 controller.orderDone = async (req, res) => {
-const { id } = req.params;
-await Clients.findByIdAndUpdate(id, { done: true });
-res.redirect("/admin/panel");
+  const { id } = req.params;
+  await Clients.findByIdAndUpdate(id, { done: true });
+  res.redirect("/admin/panel");
 };
 controller.undoOrder = async (req, res) => {
-const { id } = req.params;
-await Clients.findByIdAndUpdate(id, { done: false });
-res.redirect("/admin/panel");
+  const { id } = req.params;
+  await Clients.findByIdAndUpdate(id, { done: false });
+  res.redirect("/admin/panel");
 };
 
 controller.deleteProduct = async (req, res) => {
@@ -107,6 +110,25 @@ controller.deleteOrder = async (req, res) => {
   const { id } = req.params;
   await Clients.findByIdAndDelete(id);
   res.redirect("/admin/panel");
+};
+
+controller.upload = async (req, res) => {
+  const image = new Image({
+    path: req.file.filename,
+  });
+
+  try {
+    await image.save();
+    res.redirect("/admin/panel/new");
+  } catch (error) {
+    console.log(error);
+  }
+};
+controller.selectImg = async (req,res) =>{
+  console.log(req.body)
+}
+controller.renderUpload = async (req, res) => {
+  res.render("upload");
 };
 
 // mongodb+srv:Enzo:UDRDRiI6l0NMmj0G@arthur-workshop.bwnuexp.mongodb.net/dbapi?retryWrites=true&w=majority
