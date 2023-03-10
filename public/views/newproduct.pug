@@ -24,7 +24,7 @@ head
                     .image-container 
                         each x in y 
                             .select-img-container
-                                img#img-chk(src=``)
+                                img#img-chk(src=`/products-imgs/${x.path}`)
                                 input.checkbox-img(type="checkbox")
                     h4#h4-margintop O 
                         a.upload-link(href="/admin/upload") añadir una nueva imagen
@@ -48,5 +48,6 @@ head
                     input.new-input(type="number" name="pID")
                 button#submit(type="submit") Enviar
         
-
+//Scripts
+script(src='/script/edit.js')
   
