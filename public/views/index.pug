@@ -23,9 +23,9 @@ nav
     li.nav-res-items_li
       a(href='/') INICIO
     li.nav-res-items_li
-      a(href='#productos') PRODUCTOS
-    li.nav-res-items_li
       a(href='#nosotros') NOSOTROS
+    li.nav-res-items_li
+      a(href='#productos') PRODUCTOS
     li.nav-res-items_li
       a(href='#clientes') NUESTROS CLIENTES 
 #carrito.responsive-shop_open
@@ -109,7 +109,7 @@ section#productos
         // cambia el descuento aca abajo (importante agregar "%" al final)
         span.discount-p= `${prod.pDisc}`
         // aca abajo donde dice src='' tenes que meter el link de la imagen entre las comillas(podes cambiarlo donde dice src='y aca adentro lo pones'), la imagen debe estar en la carpeta products-imgs y a la hora de escribir el link debe tener el mismo nombre(p-negro en este caso) y formato (.jpg, .jpeg, .png) el del archivo y aca abajo
-        img(src=`../products-imgs/${prod.pImage}`)
+        img(src=`..${prod.pImage}`)
       .info-p-container
         // cambia el precio aca abajo
         p.price-p= prod.pPrice 
@@ -120,9 +120,52 @@ section#productos
         // cambia el color aca abajo, esto de todas formas te va a servir a vos el cliente esto no lo ve
       b.color(hidden='') Negro
 
+// productos 
+section#clientes
+  .about-us
+    h1 NUESTROS CLIENTES
+    .questions
+      .question
+        li| Chill Garden
+        li| Caballito
+        li| Club Vélez Sarfield
+        li| Campo Trocha
+        li| Mercedes Barrio Privado Campo Daromy
+        li| San Vicente 
+        .question-more-clients
+          li| Country Club Banco Provincia
+          li| Cabañas Tandil 
+          li| Barrio Privado Alto Verde 
+          li| Cordoba 
+          li| Country Cañada Los Arces
+          li| Pilar
+          li| Bg Outfitters 
+          li| Palermo 
+          li| Condominio Privado Hurlingham  
+          li| Barrio Privado San Isidro Labrador
+          li| Benavidez 
+          li| Terralagos
+          li| Tiempos de Canning  
+          li| Hudson Park
+          li| Altos del Sol 
+        span.hjj23 Ver más
+        .question-more-clients
+          li| Country Club Banco Provincia
+          li| Cabañas Tandil 
+          li| Barrio Privado Alto Verde 
+          li| Cordoba 
+          li| Country Cañada Los Arces
+          li| Pilar
+          li| Bg Outfitters 
+          li| Palermo 
+          li| Condominio Privado Hurlingham  
+          li| Barrio Privado San Isidro Labrador
+          li| Benavidez 
+          li| Terralagos
+          li| Tiempos de Canning  
+          li| Hudson Park
+          li| Altos del Sol 
 
-
-  
 
 // footer
 footer
