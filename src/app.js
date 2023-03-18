@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 mongoose.set("strictQuery", false);
-
+console.log(process.env.MDB_URI)
 mongoose
   .connect(process.env.MDB_URI)
   .then(() => console.log("SE HA CONECTADO A MONGODB"))
