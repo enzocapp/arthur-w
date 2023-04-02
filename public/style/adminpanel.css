@@ -48,6 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  max-width: 310px;
   overflow-y: auto;
 }
 

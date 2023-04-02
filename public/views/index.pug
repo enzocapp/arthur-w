@@ -115,10 +115,11 @@ section#productos
         p.price-p= prod.pPrice 
         // cambia el nombre del producto aca abajo
         p.price-p_text= prod.pName
+        //aca va el color
+        b.color=prod.pColor
         //si queres agregar otro producto, procurá ponerle un id distinto porque si no va a tirar error(podes cambiarlo donde dice p-id='y aca adentro lo pones')
         button.buy(p-id= `${prod.pID}`) A&ntilde;adir al carrito
         // cambia el color aca abajo, esto de todas formas te va a servir a vos el cliente esto no lo ve
-      b.color(hidden='') Negro
 
 // productos 
 section#clientes

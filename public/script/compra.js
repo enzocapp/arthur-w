@@ -10,7 +10,7 @@ if(screen.width>750){
 
 }
 productSection.addEventListener('click', e=>{
-    changeExpand(e)
+    changeExpandd(e)
     setSize(e)
 })
 document.addEventListener("input", (e) => {
@@ -56,7 +56,7 @@ const setSize = (e) =>{
     e.target.style.display = "none";
   }
 }
-const changeExpand = e =>{
+const changeExpandd = e =>{
     expand = e.target;
     let expanded = expand.parentElement.parentElement.querySelector('.second-info');
     if(expand.textContent == "expand_more"){
@@ -120,6 +120,7 @@ const loadProducts = ()=> {
           </div>
         </div>`
         productSection.appendChild(row)
+        console.log("A")
         // setTotal(discPrice)
     })
 }
